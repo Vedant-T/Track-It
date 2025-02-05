@@ -26,7 +26,7 @@ export async function getTasks(userId: string) {
 
     const tasks = response.map((task) => ({
       ...task,
-      _id: task._id.toString()
+      _id: task._id?.toString()
     }));
 
     return tasks as unknown as TaskInterface[];
