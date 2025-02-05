@@ -39,7 +39,7 @@ export async function getTasks(userId: string) {
 export async function updateTask(id: string, updates: Partial<TaskInterface>) {
   try {
     await connectToDB();
-    const updatedTask = await Task.findOneAndUpdate({ _id: id }, updates).lean();
+    const updatedTask = await Task.findOneAndUpdate({ _id: id }, updates);
     revalidatePath("/");
 
     const plainTask = updatedTask?.toObject();
