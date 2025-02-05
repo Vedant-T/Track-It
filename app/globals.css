@@ -2,20 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  background-color: #020c17;
+  font-size: 18px;
+  color: white;
+  height: 100vh;
+  padding: 25px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem
+}
+
+.cl-rootBox{
+  height: 100%;
+  width: 100%
+}
+
+.cl-userButtonTrigger{
+  height: 100%;
+  width: 100%
+}
+
+.cl-userButtonBox{
+  opacity: 0;
+}
+
+input, textarea{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  resize: none;
+  background-color: #020c17;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+label{
+  margin-bottom: 0.8rem;
+  display: inline-block;
+  font-size: clamp(0.9rem, 5vw, 1.2rem);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+  filter: invert();
+  cursor: pointer
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    padding: 0.5rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/*
+  #0A1828 - inside container
+  #178582 - turquioise (buttons and minor elements)
+  #BFA181 - gold (premium looks)
+  #011e31 - card shade
+*/

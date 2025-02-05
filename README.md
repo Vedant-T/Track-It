@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Management Application
 
-## Getting Started
+A simple Task Management application using Next.js with Server Actions. Users are able to create, view, edit, and delete tasks.
 
-First, run the development server:
+## Links
+- Github - https://github.com/Vedant-T/Track-It
+- Vercel - 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Task operations (create, read, update, delete)
+- Mark tasks as complete/incomplete
+- Basic task details (title, description, due date)
+- Data persistence using MongoDB
+- Error handling and loading states
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technical Requirements
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend:** Next.js
+- **Backend:** Next.js Server Actions
+- **Database:** MongoDB
+- **Deployment:** Vercel
+- **Languages & Tools:** TypeScript, Tailwind CSS
 
-## Learn More
+## Setup Instructions
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Vedant-T/Track-It.git
+   cd track_it
+2. **Install dependencies:**
+   ```bash
+   npm install
+3. **Set up environment variables:**
+   Create a .env.local file in the root directory and add the following:
+   ```bash
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<Publishable>
+   CLERK_SECRET_KEY=<Secret Key>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/signin
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/signup
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_OUT_URL=/signin
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   MONGODB_URI=<MongoDB URI>
+4. **Run the development server:**
+   ```bash
+   npm run dev
+Open http://localhost:3000 with your browser to see the result.
