@@ -39,7 +39,9 @@ const UpdateTask = ({ setIsUpdateTask, details }: Props) => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
-        await updateTask(details._id, {title, description, dueDate: date, completed} )
+        const formattedDate = date ? new Date(date) : undefined;
+
+        await updateTask(details._id, {title, description, dueDate: formattedDate, completed} )
 
         setIsUpdateTask(false)
     }
